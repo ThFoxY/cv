@@ -50,6 +50,9 @@ export const projectItemSchema = z.object({
   title: z.string(),
   description: z.string().optional(),
   url: z.url().optional(),
+  startDate: z.string().optional(), // exp. '2023-01' or 'Jan 2023'
+  endDate: z.string().nullish(), // Only the start date is shown if not provided / null
+  current: z.boolean().default(false), // Shows "Present" as end date
   technologies: z.array(z.string()).default([]),
   highlights: z.array(z.string()).default([]),
 });

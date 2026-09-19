@@ -195,6 +195,8 @@ The `cv.json` file contains all structured profile information:
       "title": "Open Source Project",
       "description": "Project overview and key features.",
       "url": "https://github.com/example/project",
+      "startDate": "2023-06",
+      "endDate": "2024-02",
       "technologies": ["Astro", "TypeScript"]
     }
   ],

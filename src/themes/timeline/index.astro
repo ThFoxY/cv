@@ -22,6 +22,12 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
   if (!dateStr) return "";
   return dateStr;
 }
+
+function projectDates(p: { startDate?: string; endDate?: string | null; current?: boolean }) {
+  const end = p.current ? t("present") : p.endDate;
+  if (p.startDate && end) return `${p.startDate} – ${end}`;
+  return p.startDate || end || "";
+}
 ---
 
 <div class="cv-timeline-theme" id="timeline-theme-root">
@@ -200,7 +206,7 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
           {projects.map((proj) => (
             <article class="portfolio-card">
               <div class="card-glow"></div>
-              <div class="card-header">
+              <div class="card-header node-header">
                 <h3 class="card-title">
                   {proj.url ? (
                     <a href={proj.url} target="_blank" rel="noopener noreferrer" class="external-link">
@@ -210,6 +216,11 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
                     proj.title
                   )}
                 </h3>
+                {projectDates(proj) && (
+                  <div class="node-date">
+                    <span class="date-text">{projectDates(proj)}</span>
+                  </div>
+                )}
               </div>
 
               {proj.description && <p class="card-desc">{proj.description}</p>}

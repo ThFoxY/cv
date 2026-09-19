@@ -18,6 +18,12 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
   return dateStr;
 }
 
+function projectDates(p: { startDate?: string; endDate?: string | null; current?: boolean }) {
+  const end = p.current ? t("present") : p.endDate;
+  if (p.startDate && end) return `${p.startDate} – ${end}`;
+  return p.startDate || end || "";
+}
+
 const contactItems: string[] = [];
 if (profile.email) contactItems.push(profile.email);
 if (profile.phone) contactItems.push(profile.phone);
@@ -39,13 +45,13 @@ const socialItems = (profile.socials || []).map((s) => {
     
     {contactItems.length > 0 && (
       <p class="ats-contact-line">
-        {contactItems.join("  |  ")}
+        {contactItems.join("  •  ")}
       </p>
     )}
 
     {socialItems.length > 0 && (
       <p class="ats-contact-line ats-socials">
-        {socialItems.join("  |  ")}
+        {socialItems.join("  •  ")}
       </p>
     )}
 
@@ -53,6 +59,37 @@ const socialItems = (profile.socials || []).map((s) => {
       <p class="ats-bio">{profile.bio}</p>
     )}
   </header>
+
+    <!-- Education -->
+  {education && education.length > 0 && (
+    <section class="ats-section">
+      <h2 class="ats-section-title">{t("education")}</h2>
+      <div class="ats-list">
+        {education.map((item) => (
+          <article class="ats-item">
+            <div class="ats-item-header">
+              <span class="ats-item-role">
+                <strong>{item.degree}{item.fieldOfStudy ? ` in ${item.fieldOfStudy}` : ""}</strong>
+              </span>
+              <span class="ats-item-date">{item.startDate} – {item.endDate || t("present")}</span>
+            </div>
+            <div class="ats-item-subheader">
+              <span class="ats-item-company">{item.institution}</span>
+              {item.location && <span class="ats-item-location"> • {item.location}</span>}
+            </div>
+
+            {item.highlights && item.highlights.length > 0 && (
+              <ul class="ats-highlights">
+                {item.highlights.map((hl) => (
+                  <li>{hl}</li>
+                ))}
+              </ul>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  )}
 
   <!-- Work Experience -->
   {experience && experience.length > 0 && (
@@ -67,7 +104,7 @@ const socialItems = (profile.socials || []).map((s) => {
             </div>
             <div class="ats-item-subheader">
               <span class="ats-item-company">{item.company}</span>
-              {item.location && <span class="ats-item-location"> | {item.location}</span>}
+              {item.location && <span class="ats-item-location"> • {item.location}</span>}
             </div>
 
             {item.description && <p class="ats-item-desc">{item.description}</p>}
@@ -91,30 +128,32 @@ const socialItems = (profile.socials || []).map((s) => {
     </section>
   )}
 
-  <!-- Education -->
-  {education && education.length > 0 && (
+  <!-- Projects -->
+  {projects && projects.length > 0 && (
     <section class="ats-section">
-      <h2 class="ats-section-title">{t("education")}</h2>
+      <h2 class="ats-section-title">{t("projects")}</h2>
       <div class="ats-list">
-        {education.map((item) => (
+        {projects.map((project) => (
           <article class="ats-item">
             <div class="ats-item-header">
               <span class="ats-item-role">
-                <strong>{item.degree}{item.fieldOfStudy ? ` in ${item.fieldOfStudy}` : ""}</strong>
+                <strong>{project.title}</strong>
+                {project.url && <span class="ats-project-url"> ({project.url.replace(/^https?:\/\//, "")})</span>}
               </span>
-              <span class="ats-item-date">{item.startDate} – {item.endDate || t("present")}</span>
+              {projectDates(project) && <span class="ats-item-date">{projectDates(project)}</span>}
             </div>
-            <div class="ats-item-subheader">
-              <span class="ats-item-company">{item.institution}</span>
-              {item.location && <span class="ats-item-location"> | {item.location}</span>}
-            </div>
-
-            {item.highlights && item.highlights.length > 0 && (
+            {project.description && <p class="ats-item-desc">{project.description}</p>}
+            {project.highlights && project.highlights.length > 0 && (
               <ul class="ats-highlights">
-                {item.highlights.map((hl) => (
+                {project.highlights.map((hl) => (
                   <li>{hl}</li>
                 ))}
               </ul>
+            )}
+            {project.technologies && project.technologies.length > 0 && (
+              <p class="ats-tech-line">
+                <strong>Technologies :</strong> {project.technologies.join(", ")}
+              </p>
             )}
           </article>
         ))}
@@ -131,38 +170,6 @@ const socialItems = (profile.socials || []).map((s) => {
           <p class="ats-skill-row">
             <strong>{group.category}:</strong> {group.skills.join(", ")}
           </p>
-        ))}
-      </div>
-    </section>
-  )}
-
-  <!-- Projects -->
-  {projects && projects.length > 0 && (
-    <section class="ats-section">
-      <h2 class="ats-section-title">{t("projects")}</h2>
-      <div class="ats-list">
-        {projects.map((project) => (
-          <article class="ats-item">
-            <div class="ats-item-header">
-              <span class="ats-item-role">
-                <strong>{project.title}</strong>
-                {project.url && <span class="ats-project-url"> ({project.url.replace(/^https?:\/\//, "")})</span>}
-              </span>
-            </div>
-            {project.description && <p class="ats-item-desc">{project.description}</p>}
-            {project.highlights && project.highlights.length > 0 && (
-              <ul class="ats-highlights">
-                {project.highlights.map((hl) => (
-                  <li>{hl}</li>
-                ))}
-              </ul>
-            )}
-            {project.technologies && project.technologies.length > 0 && (
-              <p class="ats-tech-line">
-                <strong>Technologies:</strong> {project.technologies.join(", ")}
-              </p>
-            )}
-          </article>
         ))}
       </div>
     </section>
@@ -190,7 +197,12 @@ const socialItems = (profile.socials || []).map((s) => {
     <section class="ats-section">
       <h2 class="ats-section-title">{t("languages")}</h2>
       <p class="ats-languages-line">
-        {languages.map((l) => `${l.language} (${l.fluency})`).join("  |  ")}
+        {languages.map((l, i) => (
+          <>
+            {i > 0 && "  •  "}
+            <strong>{l.language}</strong> : {l.fluency}
+          </>
+        ))}
       </p>
     </section>
   )}
@@ -199,7 +211,7 @@ const socialItems = (profile.socials || []).map((s) => {
   {interests && interests.length > 0 && (
     <section class="ats-section">
       <h2 class="ats-section-title">{t("interests")}</h2>
-      <p class="ats-languages-line">{interests.join("  |  ")}</p>
+      <p class="ats-languages-line">{interests.join("  •  ")}</p>
     </section>
   )}
 </div>
@@ -209,12 +221,12 @@ const socialItems = (profile.socials || []).map((s) => {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
     color: #111827;
     background-color: #ffffff;
-    line-height: 1.45;
-    font-size: 10pt;
+    line-height: 1.3;
+    font-size: 9pt;
     max-width: 210mm;
     min-height: 297mm;
     margin: 0 auto;
-    padding: 15mm 18mm;
+    padding: 10mm 12mm;
     box-sizing: border-box;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
@@ -222,7 +234,7 @@ const socialItems = (profile.socials || []).map((s) => {
 
   @page {
     size: var(--pageSize) portrait;
-    margin: 15mm 18mm;
+    margin: 10mm 12mm;
   }
 
   @media print {
@@ -237,58 +249,58 @@ const socialItems = (profile.socials || []).map((s) => {
   /* Header */
   .ats-header {
     text-align: center;
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.6rem;
   }
 
   .ats-name {
-    font-size: 20pt;
+    font-size: 17pt;
     font-weight: 800;
     letter-spacing: -0.02em;
-    margin: 0 0 0.2rem 0;
+    margin: 0 0 0.1rem 0;
     text-transform: uppercase;
     color: #000000;
   }
 
   .ats-title {
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: 600;
     color: #374151;
-    margin: 0 0 0.35rem 0;
+    margin: 0 0 0.2rem 0;
   }
 
   .ats-contact-line {
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #4b5563;
-    margin: 0.15rem 0;
+    margin: 0.05rem 0;
   }
 
   .ats-socials {
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
 
   .ats-bio {
-    font-size: 9pt;
+    font-size: 8.5pt;
     color: #374151;
-    margin: 0.6rem auto 0 auto;
+    margin: 0.35rem auto 0 auto;
     text-align: justify;
-    line-height: 1.4;
+    line-height: 1.3;
   }
 
   /* Sections */
   .ats-section {
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.6rem;
     break-inside: auto;
   }
 
   .ats-section-title {
-    font-size: 11pt;
+    font-size: 10pt;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: #000000;
     border-bottom: 1pt solid #4b5563;
-    padding-bottom: 0.2rem;
-    margin: 0 0 0.65rem 0;
+    padding-bottom: 0.1rem;
+    margin: 0 0 0.35rem 0;
     break-after: avoid;
     page-break-after: avoid;
   }
@@ -296,7 +308,7 @@ const socialItems = (profile.socials || []).map((s) => {
   .ats-list {
     display: flex;
     flex-direction: column;
-    gap: 0.85rem;
+    gap: 0.45rem;
   }
 
   .ats-item {
@@ -304,7 +316,7 @@ const socialItems = (profile.socials || []).map((s) => {
     page-break-inside: avoid;
     display: flex;
     flex-direction: column;
-    gap: 0.15rem;
+    gap: 0.05rem;
   }
 
   .ats-compact-item {
@@ -315,7 +327,7 @@ const socialItems = (profile.socials || []).map((s) => {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    font-size: 10pt;
+    font-size: 9.5pt;
   }
 
   .ats-item-role {
@@ -323,20 +335,20 @@ const socialItems = (profile.socials || []).map((s) => {
   }
 
   .ats-project-url {
-    font-size: 8.5pt;
+    font-size: 8pt;
     font-weight: normal;
     color: #4b5563;
   }
 
   .ats-item-date {
-    font-size: 9pt;
+    font-size: 8.5pt;
     font-weight: 600;
     color: #374151;
     white-space: nowrap;
   }
 
   .ats-item-subheader {
-    font-size: 9.5pt;
+    font-size: 9pt;
     color: #374151;
   }
 
@@ -345,37 +357,37 @@ const socialItems = (profile.socials || []).map((s) => {
   }
 
   .ats-item-desc {
-    font-size: 9.25pt;
-    margin: 0.2rem 0;
+    font-size: 8.75pt;
+    margin: 0.1rem 0;
     color: #1f2937;
   }
 
   .ats-highlights {
-    margin: 0.15rem 0 0.25rem 0;
-    padding-left: 1.25rem;
-    font-size: 9pt;
+    margin: 0.05rem 0 0.1rem 0;
+    padding-left: 1.1rem;
+    font-size: 8.75pt;
     color: #1f2937;
   }
 
   .ats-highlights li {
-    margin-bottom: 0.15rem;
+    margin-bottom: 0.05rem;
   }
 
   .ats-tech-line {
-    font-size: 8.5pt;
+    font-size: 8pt;
     color: #4b5563;
-    margin: 0.15rem 0 0 0;
+    margin: 0.05rem 0 0 0;
   }
 
   /* Skills & Languages */
   .ats-skills-container {
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.12rem;
   }
 
   .ats-skill-row {
-    font-size: 9.25pt;
+    font-size: 8.75pt;
     margin: 0;
     color: #1f2937;
     break-inside: avoid;
@@ -383,7 +395,7 @@ const socialItems = (profile.socials || []).map((s) => {
   }
 
   .ats-languages-line {
-    font-size: 9.25pt;
+    font-size: 8.75pt;
     margin: 0;
     color: #1f2937;
   }

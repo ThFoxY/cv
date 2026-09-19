@@ -80,8 +80,32 @@
   ],
   "projects": [
     {
+      "title": "ROM RAG",
+      "description": "Bibliothèque de jeux vidéo (ROMs) boostée par serveur d'inférence local Ollama.",
+      "startDate": "09-2026",
+      "endDate": null,
+      "current": true,
+      "url": "https://github.com/Novachocolat/rom-rag-sae-but3",
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Redis",
+        "Ollama"
+      ],
+      "highlights": [
+        "Téléversement local d'un catalogue de ROMs, parsing MD5/SHA-1 de fichiers .dat issus de No-Intro.",
+        "Identification de ROMs par embedding via pgvector. Réponses JSON stricts par l'inférence local Ollama.",
+        "Suggestions, recherche sémantique et groupement par collections assistés par IA."
+      ]
+    },
+    {
       "title": "TCG Pokémon",
       "description": "Jeu de cartes au tour par tour, decks Pokémon personnalisables (PokéAPI).",
+      "startDate": "02-2026",
+      "endDate": "04-2026",
       "url": "https://github.com/ThFoxY/-tcg-vue-ThFoxY",
       "technologies": [
         "Vue.js",
@@ -96,16 +120,6 @@
         "Temps réel avec Socket.io, matchmaking par salles d'attente, authentification JWT sécurisée.",
         "CI/CD avec GitHub Actions (Prettier, ESLint, husky, Conventional Commits), déploiement sur Vercel.",
         "Tests unitaires Vitest, documentation JSDoc et Swagger."
-      ]
-    },
-    {
-      "title": "Sockets réseau bas niveau",
-      "description": "Développement d'un pendu en C avec une architecture client-serveur en réseau.",
-      "technologies": ["C", "Makefile", "Mermaid", "Markdown", "Git"],
-      "highlights": [
-        "Parties multijoueurs en réseau via sockets bas niveau, tour-par-tour.",
-        "Plusieurs modes de communications, connexions persistantes, matchmaking, file d'attente et mode spectateur.",
-        "Documenté avec diagrammes Mermaid, versionné avec Git et testé sous Linux."
       ]
     }
   ],

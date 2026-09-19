@@ -17,6 +17,12 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
   if (!dateStr) return "";
   return dateStr;
 }
+
+function projectDates(p: { startDate?: string; endDate?: string | null; current?: boolean }) {
+  const end = p.current ? t("present") : p.endDate;
+  if (p.startDate && end) return `${p.startDate} – ${end}`;
+  return p.startDate || end || "";
+}
 ---
 
 <div class="pdf-sidebar-layout">
@@ -183,8 +189,9 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
         <div class="project-grid">
           {projects.map((proj) => (
             <article class="proj-card">
-              <div class="proj-header">
+              <div class="proj-header exp-header">
                 <h3 class="proj-title">{proj.title}</h3>
+                {projectDates(proj) && <div class="period-pill">{projectDates(proj)}</div>}
               </div>
               {proj.description && <p class="proj-desc">{proj.description}</p>}
               {proj.highlights && proj.highlights.length > 0 && (

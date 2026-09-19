@@ -96,6 +96,8 @@
       "title": "dotcv Example Project",
       "description": "An open-source resume and portfolio generator powered by Astro with automatic ATS-friendly PDF exports.",
       "url": "https://github.com/example/dotcv",
+      "startDate": "2023-06",
+      "endDate": "2024-02",
       "technologies": ["Astro", "TypeScript", "Zod"],
       "highlights": [
         "Format-agnostic parsing (JSON, YAML, XML)",
