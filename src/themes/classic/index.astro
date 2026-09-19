@@ -55,16 +55,6 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
         <p class="title">{profile.title}</p>
         
         <div class="contact-list">
-          {profile.email && (
-            <a href={`mailto:${profile.email}`} class="contact-item">
-              <span class="icon">✉</span> {profile.email}
-            </a>
-          )}
-          {profile.phone && (
-            <a href={`tel:${profile.phone}`} class="contact-item">
-              <span class="icon">☎</span> {profile.phone}
-            </a>
-          )}
           {profile.location && (
             <span class="contact-item">
               <span class="icon">📍</span> {profile.location}

@@ -64,16 +64,6 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
               <span class="meta-icon">📍</span> {profile.location}
             </span>
           )}
-          {profile.email && (
-            <a href={`mailto:${profile.email}`} class="meta-item meta-link">
-              <span class="meta-icon">✉️</span> {profile.email}
-            </a>
-          )}
-          {profile.phone && (
-            <a href={`tel:${profile.phone}`} class="meta-item meta-link">
-              <span class="meta-icon">📱</span> {profile.phone}
-            </a>
-          )}
           {profile.website && (
             <a href={profile.website} target="_blank" rel="noopener noreferrer" class="meta-item meta-link">
               <span class="meta-icon">🔗</span> {profile.website.replace(/^https?:\/\//, '')}

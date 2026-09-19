@@ -54,8 +54,6 @@ const jsonLd = {
   description: data.profile.bio,
   url: data.profile.website || canonicalURL,
   ...(avatarUrl ? { image: avatarUrl } : {}),
-  ...(data.profile.email ? { email: `mailto:${data.profile.email}` } : {}),
-  ...(data.profile.phone ? { telephone: data.profile.phone } : {}),
   ...(data.profile.location
     ? {
         address: {

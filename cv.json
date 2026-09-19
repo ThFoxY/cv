@@ -1,0 +1,185 @@
+{
+  "profile": {
+    "name": "David Melocco",
+    "title": "Développeur full-stack, axé DevOps et LLMs",
+    "email": "davidmel7562@gmail.com",
+    "phone": "+33 6 30 86 09 66",
+    "location": "Calais, France",
+    "license": "B1 en cours",
+    "avatar": "/avatar.svg",
+    "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. Applications sécurisées, de la conception à la production. Recherche un stage de 14 à 16 semaines dès mars 2027.",
+    "socials": [
+      {
+        "plattform": "Portfolio",
+        "url": "https://thfoxy.github.io"
+      },
+      {
+        "plattform": "GitHub",
+        "url": "https://github.com/ThFoxY",
+        "username": "ThFoxY"
+      },
+      {
+        "plattform": "LinkedIn",
+        "url": "https://www.linkedin.com/in/david-melocco-4ba965341/",
+        "username": "David Melocco"
+      }
+    ]
+  },
+  "education": [
+    {
+      "institution": "IUT du Littoral Côte d'Opale",
+      "degree": "BUT Informatique — Parcours Réalisation d'Applications",
+      "startDate": "09-2024",
+      "endDate": null,
+      "location": "Calais, France",
+      "highlights": [
+        "Mise en production d'applications sécurisées et robustes.",
+        "BUT 3 : qualité algorithmique, programmation multimédia, LLM, gestion d'équipe.",
+        "Tuteur pédagogique en algorithmique et en langage C (2025-2027)."
+      ]
+    },
+    {
+      "institution": "Lycée Sophie Berthelot",
+      "degree": "Baccalauréat général — Mention Très Bien (17,58/20)",
+      "startDate": "09-2021",
+      "endDate": "07-2024",
+      "location": "Calais, France",
+      "highlights": [
+        "Mathématiques (+ option en Tle), Sciences numériques et Anglais contemporain.",
+        "Soutenance (30 mn) + FAQ sur « les extrêmes de la programmation : de l'assembleur au quantique »"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "company": "CG-VISION — Prestation web pour des clients B2B",
+      "role": "Développeur full-stack (> 200 commits seul, en autonomie)",
+      "location": "Calais, France",
+      "startDate": "05-2026",
+      "endDate": "07-2026",
+      "current": false,
+      "description": "Conception d'un e-commerce B2B pour un grand réseau de menuiseries en France.",
+      "highlights": [
+        "Parcours client complet (panier, suivi de commandes) et back-office admin, pour 100-200 clients/jour.",
+        "Solde prépayé via Stripe et service de création graphique avec revue des visuels téléversés.",
+        "Automatisation via l'API RESTful de ZeGrow/Fulfiller Reseller : 2 jours de traitement gagnés par commande.",
+        "Queues asynchrones BullMQ, live notifications avec Socket.io et e-mails avec Resend (codes OTP).",
+        "Sécurité (OWASP Top 10, validation Zod, RBAC, bcrypt) et déploiement Docker/Nginx sur VPS Debian avec load-balancing."
+      ],
+      "technologies": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "Redux",
+        "Redis",
+        "Docker"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "TCG Pokémon",
+      "description": "Jeu de cartes au tour par tour, decks Pokémon personnalisables (PokéAPI).",
+      "url": "https://github.com/ThFoxY/-tcg-vue-ThFoxY",
+      "technologies": [
+        "Vue.js",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "Pinia",
+        "Socket.io",
+        "Vitest"
+      ],
+      "highlights": [
+        "Temps réel avec Socket.io, matchmaking par salles d'attente, authentification JWT sécurisée.",
+        "CI/CD avec GitHub Actions (Prettier, ESLint, husky, Conventional Commits), déploiement sur Vercel.",
+        "Tests unitaires Vitest, documentation JSDoc et Swagger."
+      ]
+    },
+    {
+      "title": "Sockets réseau bas niveau",
+      "description": "Développement d'un pendu en C avec une architecture client-serveur en réseau.",
+      "technologies": ["C", "Makefile", "Mermaid", "Markdown", "Git"],
+      "highlights": [
+        "Parties multijoueurs en réseau via sockets bas niveau, tour-par-tour.",
+        "Plusieurs modes de communications, connexions persistantes, matchmaking, file d'attente et mode spectateur.",
+        "Documenté avec diagrammes Mermaid, versionné avec Git et testé sous Linux."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "category": "Frontend & Backend",
+      "skills": [
+        "React",
+        "Vue.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Node.js",
+        "Express",
+        "Redux",
+        "Vite",
+        "Vitest",
+        "Astro"
+      ]
+    },
+    {
+      "category": "Bases de données & ORMs",
+      "skills": ["PostgreSQL", "MySQL", "Redis", "MongoDB", "Prisma"]
+    },
+    {
+      "category": "CI/CD, DevOps & méthodes",
+      "skills": [
+        "Agile/SCRUM",
+        "GitHub Actions",
+        "Docs-as-Code",
+        "Docker",
+        "Linux",
+        "Swagger",
+        "Python",
+        "C/C++",
+        "PHP"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Cambridge English Certificate Level C1",
+      "issuer": "Cambridge University Press & Assessment",
+      "date": "07-2024"
+    },
+    {
+      "title": "TOEIC",
+      "issuer": "Passage en janvier 2027",
+      "date": "01-2027"
+    }
+  ],
+  "languages": [
+    {
+      "language": "Français",
+      "fluency": "Langue maternelle"
+    },
+    {
+      "language": "Anglais",
+      "fluency": "Autonome (C1)"
+    },
+    {
+      "language": "Espagnol",
+      "fluency": "Intermédiaire (B1)"
+    },
+    {
+      "language": "Italien",
+      "fluency": "Débutant (autodidacte)"
+    }
+  ],
+  "interests": [
+    "Développement de jeux vidéo",
+    "Veille technologique",
+    "Cosplay",
+    "Rédaction d'articles",
+    "Musique",
+    "Séries / films"
+  ]
+}

@@ -56,18 +56,6 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
     <div class="sidebar-section">
       <h2 class="sidebar-heading">{t("contact")}</h2>
       <div class="contact-stack">
-        {profile.email && (
-          <a href={`mailto:${profile.email}`} class="contact-link">
-            <span class="icon">✉</span>
-            <span>{profile.email}</span>
-          </a>
-        )}
-        {profile.phone && (
-          <a href={`tel:${profile.phone}`} class="contact-link">
-            <span class="icon">☎</span>
-            <span>{profile.phone}</span>
-          </a>
-        )}
         {profile.location && (
           <div class="contact-text">
             <span class="icon">📍</span>
