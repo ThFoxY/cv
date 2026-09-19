@@ -1,4 +1,4 @@
-export type SupportedLocale = "en" | "de";
+export type SupportedLocale = "en" | "fr" | "de";
 
 export const translations = {
   en: {
@@ -9,10 +9,25 @@ export const translations = {
     projects: "Projects",
     certifications: "Certifications",
     languages: "Languages",
+    interests: "Interests",
     contact: "Contact",
     present: "Present",
     downloadAtsPdf: "📄 ATS PDF",
     downloadDesignPdf: "🎨 Design PDF",
+  },
+  fr: {
+    aboutMe: "À propos de moi",
+    experience: "Expériences professionnelles",
+    education: "Formations",
+    skills: "Compétences",
+    projects: "Projets phares",
+    certifications: "Certifications",
+    languages: "Langues",
+    interests: "Centres d'intérêt",
+    contact: "Contacts",
+    present: "Aujourd'hui",
+    downloadAtsPdf: "📄 PDF pour IA",
+    downloadDesignPdf: "🎨 Visuel en PDF",
   },
   de: {
     aboutMe: "Über mich",
@@ -22,6 +37,7 @@ export const translations = {
     projects: "Projekte",
     certifications: "Zertifikate",
     languages: "Sprachen",
+    interests: "Interessen",
     contact: "Kontakt",
     present: "Heute",
     downloadAtsPdf: "📄 ATS PDF",
@@ -32,8 +48,7 @@ export const translations = {
 export type TranslationKey = keyof typeof translations.en;
 
 export function getTranslations(locale: string = "en") {
-  const dictionary =
-    translations[locale as SupportedLocale] ?? translations.en;
+  const dictionary = translations[locale as SupportedLocale] ?? translations.en;
 
   return (key: TranslationKey): string => {
     return dictionary[key] ?? translations.en[key] ?? key;

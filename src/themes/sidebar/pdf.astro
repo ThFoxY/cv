@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { data, locale = "en" } = Astro.props;
-const { profile, experience, education, skills, projects, certifications, languages } = data;
+const { profile, experience, education, skills, projects, certifications, languages, interests } = data;
 const t = getTranslations(locale);
 
 function formatDate(dateStr?: string | null, isCurrent?: boolean) {
@@ -54,6 +54,11 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
         {profile.website && (
           <div class="contact-item">
             <span class="icon">🌐</span> {profile.website.replace(/^https?:\/\//, '')}
+          </div>
+        )}
+        {profile.license && (
+          <div class="contact-item">
+            <span class="icon">🚗</span> {profile.license}
           </div>
         )}
       </div>
@@ -233,10 +238,28 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
         </div>
       </section>
     )}
+
+    <!-- Interests -->
+    {interests && interests.length > 0 && (
+      <section class="content-section">
+        <h2 class="main-heading">{t("interests")}</h2>
+        <div class="interests-line">
+          {interests.map((i) => <span>{i}</span>)}
+        </div>
+      </section>
+    )}
   </main>
 </div>
 
 <style>
+  .interests-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 1rem;
+    font-size: 8.5pt;
+    color: #475569;
+  }
+
   .pdf-sidebar-layout {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     display: grid;

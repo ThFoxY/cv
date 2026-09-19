@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { data, locale = "en" } = Astro.props;
-const { profile, experience, education, skills, projects, certifications, languages } = data;
+const { profile, experience, education, skills, projects, certifications, languages, interests } = data;
 const t = getTranslations(locale);
 
 function formatDate(dateStr?: string | null, isCurrent?: boolean) {
@@ -38,6 +38,7 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
           {profile.email && <span class="meta-item">✉ {profile.email}</span>}
           {profile.phone && <span class="meta-item">☎ {profile.phone}</span>}
           {profile.website && <span class="meta-item">🌐 {profile.website.replace(/^https?:\/\//, '')}</span>}
+          {profile.license && <span class="meta-item">🚗 {profile.license}</span>}
         </div>
       </div>
     </div>
@@ -223,9 +224,31 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
       )}
     </div>
   )}
+
+  <!-- Interests -->
+  {interests && interests.length > 0 && (
+    <section class="section interests">
+      <h2 class="section-title">{t("interests")}</h2>
+      <div class="interests-line">
+        {interests.map((i) => <span>{i}</span>)}
+      </div>
+    </section>
+  )}
 </div>
 
 <style>
+  .interests {
+    margin-top: 1.5rem;
+  }
+
+  .interests-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.15rem 1rem;
+    font-size: 8.5pt;
+    color: #475569;
+  }
+
   .pdf-timeline {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     color: #0f172a;

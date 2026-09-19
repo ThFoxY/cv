@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { data, locale = "en", config } = Astro.props;
-const { profile, experience, education, skills, projects, certifications, languages } = data;
+const { profile, experience, education, skills, projects, certifications, languages, interests } = data;
 const t = getTranslations(locale);
 
 const showAtsButton = config?.pdf?.showAtsButton ?? true;
@@ -79,6 +79,12 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
             <span class="icon">🌐</span>
             <span>{profile.website.replace(/^https?:\/\//, '')}</span>
           </a>
+        )}
+        {profile.license && (
+          <div class="contact-text">
+            <span class="icon">🚗</span>
+            <span>{profile.license}</span>
+          </div>
         )}
       </div>
 
@@ -269,10 +275,28 @@ function formatDate(dateStr?: string | null, isCurrent?: boolean) {
         </div>
       </section>
     )}
+
+    <!-- Interests -->
+    {interests && interests.length > 0 && (
+      <section class="content-section">
+        <h2 class="main-heading">{t("interests")}</h2>
+        <div class="interests-line">
+          {interests.map((i) => <span>{i}</span>)}
+        </div>
+      </section>
+    )}
   </main>
 </div>
 
 <style>
+  .interests-line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    font-size: 0.875rem;
+    color: var(--cv-color-text-muted);
+  }
+
   :root {
     --cv-sidebar-bg: #1e293b;
     --cv-sidebar-text: #f8fafc;

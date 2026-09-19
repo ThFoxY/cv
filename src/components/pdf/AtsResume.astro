@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { data, locale = "en", format = "a4" } = Astro.props;
-const { profile, experience, education, skills, projects, certifications, languages } = data;
+const { profile, experience, education, skills, projects, certifications, languages, interests } = data;
 const t = getTranslations(locale);
 
 function formatDate(dateStr?: string | null, isCurrent?: boolean) {
@@ -23,6 +23,7 @@ if (profile.email) contactItems.push(profile.email);
 if (profile.phone) contactItems.push(profile.phone);
 if (profile.location) contactItems.push(profile.location);
 if (profile.website) contactItems.push(profile.website.replace(/^https?:\/\//, ""));
+if (profile.license) contactItems.push(profile.license);
 
 const socialItems = (profile.socials || []).map((s) => {
   const handle = s.username ? `@${s.username}` : s.url.replace(/^https?:\/\//, "");
@@ -191,6 +192,14 @@ const socialItems = (profile.socials || []).map((s) => {
       <p class="ats-languages-line">
         {languages.map((l) => `${l.language} (${l.fluency})`).join("  |  ")}
       </p>
+    </section>
+  )}
+
+  <!-- Interests -->
+  {interests && interests.length > 0 && (
+    <section class="ats-section">
+      <h2 class="ats-section-title">{t("interests")}</h2>
+      <p class="ats-languages-line">{interests.join("  |  ")}</p>
     </section>
   )}
 </div>
