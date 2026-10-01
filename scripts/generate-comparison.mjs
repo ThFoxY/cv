@@ -2,7 +2,7 @@ import puppeteer from "puppeteer";
 import fs from "node:fs/promises";
 import path from "node:path";
 
-const BASE_URL = process.env.BASE_URL || "http://localhost:4321";
+const BASE_URL = process.env.BASE_URL || "http://localhost:4321/cv";
 const OUTPUT_DIR = path.join(process.cwd(), "docs", "images");
 
 async function checkServer(url) {
@@ -71,7 +71,9 @@ async function main() {
     });
     await fs.writeFile(path.join(OUTPUT_DIR, "pdf-design.png"), designBuffer);
 
-    console.log("🎨 Generiere Side-by-Side Vergleichsbild (pdf-comparison.png)...");
+    console.log(
+      "🎨 Generiere Side-by-Side Vergleichsbild (pdf-comparison.png)...",
+    );
     const atsBase64 = atsBuffer.toString("base64");
     const designBase64 = designBuffer.toString("base64");
 
@@ -160,7 +162,9 @@ async function main() {
       height: 920,
       deviceScaleFactor: 2,
     });
-    await compositePage.setContent(comparisonHtml, { waitUntil: "networkidle0" });
+    await compositePage.setContent(comparisonHtml, {
+      waitUntil: "networkidle0",
+    });
 
     const outputPath = path.join(OUTPUT_DIR, "pdf-comparison.png");
     await compositePage.screenshot({
@@ -168,7 +172,9 @@ async function main() {
       type: "png",
     });
 
-    console.log(`\n✅ Fertig! Vergleichsbild erfolgreich gespeichert unter:\n   ${outputPath}\n`);
+    console.log(
+      `\n✅ Fertig! Vergleichsbild erfolgreich gespeichert unter:\n   ${outputPath}\n`,
+    );
   } finally {
     await browser.close();
   }

@@ -52,11 +52,11 @@
   ],
   "experience": [
     {
-      "company": "CG-VISION — Prestation web pour des clients B2B",
+      "company": "CG-VISION (avec recommandation) — Prestation web pour des clients B2B",
       "role": "Développeur full-stack (> 200 commits seul, en autonomie)",
       "location": "Calais, France",
-      "startDate": "05-2026",
-      "endDate": "07-2026",
+      "startDate": "03-2026",
+      "endDate": "10-2026",
       "current": false,
       "description": "Conception d'un e-commerce B2B pour un grand réseau de menuiseries en France.",
       "highlights": [
@@ -64,7 +64,8 @@
         "Solde prépayé via Stripe et service de création graphique avec revue des visuels téléversés.",
         "Automatisation via l'API RESTful de ZeGrow/Fulfiller Reseller : 2 jours de traitement gagnés par commande.",
         "Queues asynchrones BullMQ, live notifications avec Socket.io et e-mails avec Resend (codes OTP).",
-        "Sécurité (OWASP Top 10, validation Zod, RBAC, bcrypt) et déploiement Docker/Nginx sur VPS Debian avec load-balancing."
+        "Sécurité (OWASP Top 10, validation Zod, RBAC, bcrypt) et déploiement Docker Compose sous Nginx.",
+        "Administration serveur (Debian 12), hébergement OVH avec réplication (load-balancing) et sauvegardes automatiques."
       ],
       "technologies": [
         "React",
