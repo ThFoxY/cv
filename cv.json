@@ -5,12 +5,12 @@
     "email": "davidmel7562@gmail.com",
     "phone": "+33 6 30 86 09 66",
     "location": "Calais (62100), France",
-    "license": "B1 en cours",
+    "license": "Permis B en cours",
     "avatar": "avatar.png",
     "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. Applications sécurisées, de la conception à la production. Recherche un stage de 14 à 16 semaines dès mars 2027.",
     "socials": [
       {
-        "plattform": "Portfolio",
+        "plattform": "Portfolio (W.I.P)",
         "url": "https://thfoxy.github.io"
       },
       {
@@ -53,7 +53,7 @@
   "experience": [
     {
       "company": "CG-VISION (avec recommandation) — Prestation web pour des clients B2B",
-      "role": "Développeur full-stack (> 200 commits seul, en autonomie)",
+      "role": "Développeur full-stack (> 200 commits, en duo puis en autonomie)",
       "location": "Calais, France",
       "startDate": "03-2026",
       "endDate": "10-2026",
@@ -130,7 +130,6 @@
       "skills": [
         "React",
         "Vue.js",
-        "TypeScript",
         "TailwindCSS",
         "Node.js",
         "Express",
@@ -142,7 +141,25 @@
     },
     {
       "category": "Bases de données & ORMs",
-      "skills": ["PostgreSQL", "MySQL", "Redis", "MongoDB", "Prisma"]
+      "skills": [
+        "PostgreSQL",
+        "MySQL",
+        "Redis",
+        "MongoDB",
+        "Prisma",
+        "PL/pgSQL"
+      ]
+    },
+    {
+      "category": "Langages, scripting & paradigmes",
+      "skills": [
+        "JavaScript / TypeScript",
+        "Python avancé",
+        "PHP",
+        "C",
+        "C++",
+        "Java"
+      ]
     },
     {
       "category": "CI/CD, DevOps & méthodes",
@@ -152,10 +169,7 @@
         "Docs-as-Code",
         "Docker",
         "Linux",
-        "Swagger",
-        "Python",
-        "C/C++",
-        "PHP"
+        "Swagger"
       ]
     }
   ],
@@ -167,7 +181,7 @@
     },
     {
       "title": "TOEIC",
-      "issuer": "Passage en janvier 2027",
+      "issuer": "Passage prévu en janvier 2027",
       "date": "01-2027"
     }
   ],
@@ -190,7 +204,7 @@
     }
   ],
   "interests": [
-    "Développement de jeux vidéo",
+    "Game jams",
     "Veille technologique",
     "Cosplay",
     "Rédaction d'articles",
