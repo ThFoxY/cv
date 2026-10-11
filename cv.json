@@ -5,12 +5,12 @@
     "email": "davidmel7562@gmail.com",
     "phone": "+33 6 30 86 09 66",
     "location": "Calais (62100), France",
-    "license": "Permis B en cours",
+    "license": "Permis B : passage prévu en 2027",
     "avatar": "avatar.png",
     "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. Applications sécurisées, de la conception à la production. Recherche un stage de 14 à 16 semaines dès mars 2027.",
     "socials": [
       {
-        "plattform": "Portfolio (W.I.P)",
+        "plattform": "Portfolio (en construction)",
         "url": "https://thfoxy.github.io"
       },
       {
@@ -204,8 +204,8 @@
     }
   ],
   "interests": [
-    "Game jams",
-    "Veille technologique",
+    "Game jams (3e CGJ 2025-26)",
+    "Veille technologique (TL;DR)",
     "Cosplay",
     "Rédaction d'articles",
     "Musique",
