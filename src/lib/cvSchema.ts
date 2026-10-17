@@ -77,6 +77,8 @@ export const cvSchema = z.object({
   projects: z.array(projectItemSchema).default([]),
   certifications: z.array(certificationsSchema).default([]),
   languages: z.array(languageItemSchema).default([]),
+  softSkills: z.array(z.string()).default([]), // exp. ['Teamwork', 'Logical thinking']
+  softSkillsSource: z.string().optional(), // exp. 'HESTER certified assessment'
   interests: z.array(z.string()).default([]), // exp. ['Chess', 'Photography']
 });
 

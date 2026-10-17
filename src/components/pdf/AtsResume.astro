@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { data, locale = "en", format = "a4" } = Astro.props;
-const { profile, experience, education, skills, projects, certifications, languages, interests } = data;
+const { profile, experience, education, skills, projects, certifications, languages, softSkills, interests } = data;
 const t = getTranslations(locale);
 
 function formatDate(dateStr?: string | null, isCurrent?: boolean) {
@@ -204,6 +204,14 @@ const socialItems = (profile.socials || []).map((s) => {
           </>
         ))}
       </p>
+    </section>
+  )}
+
+  <!-- Soft skills -->
+  {softSkills && softSkills.length > 0 && (
+    <section class="ats-section">
+      <h2 class="ats-section-title">{t("softSkills")}{data.softSkillsSource && <span style="font-size:0.7em;font-weight:400;opacity:0.5;text-transform:none;letter-spacing:normal;margin-left:0.5em;">{data.softSkillsSource}</span>}</h2>
+      <p class="ats-languages-line">{softSkills.join("  •  ")}</p>
     </section>
   )}
 

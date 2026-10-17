@@ -11,7 +11,7 @@ interface Props {
 }
 
 const { data, locale = "en", config } = Astro.props;
-const { profile, experience, education, skills, projects, certifications, languages, interests } = data;
+const { profile, experience, education, skills, projects, certifications, languages, softSkills, interests } = data;
 const t = getTranslations(locale);
 
 const showAtsButton = config?.pdf?.showAtsButton ?? true;
@@ -307,6 +307,16 @@ function projectDates(p: { startDate?: string; endDate?: string | null; current?
           </div>
         )}
       </div>
+    )}
+
+    <!-- Soft skills -->
+    {softSkills && softSkills.length > 0 && (
+      <section class="interests">
+        <h2 class="section-heading">{t("softSkills")}{data.softSkillsSource && <span style="font-size:0.7em;font-weight:400;opacity:0.5;text-transform:none;letter-spacing:normal;margin-left:0.5em;">{data.softSkillsSource}</span>}</h2>
+        <div class="interests-line">
+          {softSkills.map((i) => <span>{i}</span>)}
+        </div>
+      </section>
     )}
 
     <!-- Interests -->

@@ -1,13 +1,13 @@
 {
   "profile": {
     "name": "David Melocco",
-    "title": "Développeur full-stack, axé DevOps et LLMs",
+    "title": "Développeur back-end : API, Python et automatisation",
     "email": "davidmel7562@gmail.com",
     "phone": "+33 6 30 86 09 66",
     "location": "Calais (62100), France",
     "license": "Permis B : passage prévu en 2027",
     "avatar": "avatar.png",
-    "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. Applications sécurisées, de la conception à la production. Recherche un stage de 14 à 16 semaines dès le 8 mars 2027.",
+    "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. API et automatisations des processus, déploiement sous Docker, culture DevSecOps. Recherche un stage de 14 à 16 semaines dès le 8 mars 2027.",
     "socials": [
       {
         "plattform": "Portfolio (en construction)",
@@ -34,7 +34,7 @@
       "location": "Calais, France",
       "highlights": [
         "Mise en production d'applications sécurisées et robustes.",
-        "BUT 3 : qualité algorithmique, programmation multimédia, LLM, gestion d'équipe.",
+        "BUT 2 : administration d'un serveur Apache sous Ubuntu : SSH, HTTPS, analyse réseau via Wireshark.",
         "Tuteur pédagogique en algorithmique et en langage C (2025-2027)."
       ]
     },
@@ -103,24 +103,23 @@
       ]
     },
     {
-      "title": "TCG Pokémon",
-      "description": "Jeu de cartes au tour par tour, decks Pokémon personnalisables (PokéAPI).",
-      "startDate": "02-2026",
-      "endDate": "04-2026",
-      "url": "https://github.com/ThFoxY/-tcg-vue-ThFoxY",
+      "title": "StarEX",
+      "description": "Extraction d'étoiles d'images astronomiques .FITS via interface de commandes",
+      "startDate": "12-2025",
+      "url": "https://github.com/ThFoxY/star-reduction",
       "technologies": [
-        "Vue.js",
-        "TypeScript",
-        "Node.js",
-        "Express",
-        "Pinia",
-        "Socket.io",
-        "Vitest"
+        "Python",
+        "NumPy",
+        "astropy",
+        "Bash",
+        "venv",
+        "Markdown",
+        "Mermaid"
       ],
       "highlights": [
-        "Temps réel avec Socket.io, matchmaking par salles d'attente, authentification JWT sécurisée.",
-        "CI/CD avec GitHub Actions (Prettier, ESLint, husky, Conventional Commits), déploiement sur Vercel.",
-        "Tests unitaires Vitest, documentation JSDoc et Swagger."
+        "Interface de commandes avec options et exemples documentée. Une semaine, leader d'une équipe de trois.",
+        "Traitement par lots multi-workers et batch-processing pour accélerer le temps de calcul et les performances.",
+        "Bibliothèques (NumPy, astropy), open-source et fiables, usées par les académies et groupes scientifiques."
       ]
     }
   ],
@@ -168,8 +167,9 @@
         "GitHub Actions",
         "Docs-as-Code",
         "Docker",
-        "Linux",
-        "Swagger"
+        "Linux (Debian, Ubuntu)",
+        "Swagger",
+        "Nginx"
       ]
     }
   ],
@@ -202,6 +202,14 @@
       "language": "Italien",
       "fluency": "Débutant (autodidacte)"
     }
+  ],
+  "softSkillsSource": "Résultats du module HESTER JobTeaser certifié",
+  "softSkills": [
+    "Pensée logique",
+    "Développement de soi",
+    "Processus créatif",
+    "Approche systémique",
+    "Transmission"
   ],
   "interests": [
     "Game jams (3e CGJ 2025-26)",
