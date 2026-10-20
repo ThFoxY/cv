@@ -65,7 +65,7 @@
         "Automatisation via l'API RESTful de ZeGrow/Fulfiller Reseller : 2 jours de traitement gagnés par commande.",
         "Queues asynchrones BullMQ, live notifications avec Socket.io et e-mails avec Resend (codes OTP).",
         "Sécurité (OWASP Top 10, validation Zod, RBAC, bcrypt) et déploiement Docker Compose sous Nginx.",
-        "Administration serveur (Debian 12), hébergement OVH avec réplication (load-balancing) et sauvegardes automatiques."
+        "Configuration HTTPS via certbot sur VPS (Debian 12), hébergement OVH, sauvegardes automatiques journalières."
       ],
       "technologies": [
         "React",
@@ -89,17 +89,19 @@
       "url": "https://github.com/Novachocolat/rom-rag-sae-but3",
       "technologies": [
         "React",
-        "TypeScript",
         "Node.js",
         "Express",
-        "PostgreSQL",
         "Redis",
-        "Ollama"
+        "PostgreSQL + pgvector",
+        "JSON",
+        "Ollama",
+        "Astro"
       ],
       "highlights": [
         "Téléversement local d'un catalogue de ROMs, parsing MD5/SHA-1 de fichiers .dat issus de No-Intro.",
-        "Identification de ROMs par embedding via pgvector. Réponses JSON stricts par l'inférence local Ollama.",
-        "Suggestions, recherche sémantique et groupement par collections assistés par IA."
+        "Identification de ROMs inconnues par embeddings (pgvector) avec un pourcentage de confiance.",
+        "Recherche hybride, suggestions et regroupement par collections assistés par IA, réponses JSON strictes.",
+        "Plus de 550 tests unitaires et documentation accessible en ligne."
       ]
     },
     {
@@ -158,7 +160,8 @@
         "PHP",
         "C",
         "C++",
-        "Java"
+        "Java",
+        "F#"
       ]
     },
     {
@@ -166,8 +169,8 @@
       "skills": [
         "Agile/SCRUM",
         "GitHub Actions",
-        "Docs-as-Code",
         "Docker",
+        "Windows",
         "Linux (Debian, Ubuntu)",
         "Swagger",
         "Nginx"
