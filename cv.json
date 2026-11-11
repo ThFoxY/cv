@@ -7,7 +7,7 @@
     "location": "Calais (62100), France",
     "license": "Permis B : passage prévu en 2027",
     "avatar": "avatar.png",
-    "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. Applications sécurisées, de la conception à la production. Recherche un stage de 14 à 16 semaines dès mars 2027.",
+    "bio": "Développeur full-stack junior, en 3e année de BUT Informatique. Applications sécurisées et déployées, de la CI à la CD. Recherche un stage de fin de cycle, de 14 à 16 semaines, dès mars 2027 (fin février possible).",
     "socials": [
       {
         "plattform": "Portfolio (en construction)",
@@ -33,8 +33,9 @@
       "endDate": null,
       "location": "Calais, France",
       "highlights": [
-        "Mise en production d'applications sécurisées et robustes.",
+        "Diplômé DUT (bac +2), Technicien Supérieur / Agent de Maîtrise en informatique.",
         "BUT 3 : qualité algorithmique, programmation multimédia, LLM, gestion d'équipe.",
+        "BUT 2 : administration Apache, Debian 12, machines virtuelles, SSH, surveillance WireShark.",
         "Tuteur pédagogique en algorithmique et en langage C (2025-2027)."
       ]
     },
@@ -53,7 +54,7 @@
   "experience": [
     {
       "company": "CG-VISION (avec recommandation) — Prestation web pour des clients B2B",
-      "role": "Développeur full-stack (> 200 commits, en duo puis en autonomie)",
+      "role": "Développeur full-stack (> 250 commits, en duo puis en autonomie)",
       "location": "Calais, France",
       "startDate": "03-2026",
       "endDate": "10-2026",
@@ -84,7 +85,7 @@
       "title": "ROM RAG",
       "description": "Bibliothèque de jeux vidéo (ROMs) boostée par serveur d'inférence local Ollama.",
       "startDate": "09-2026",
-      "endDate": null,
+      "endDate": "12-2026",
       "current": true,
       "url": "https://github.com/Novachocolat/rom-rag-sae-but3",
       "technologies": [
@@ -101,7 +102,7 @@
         "Téléversement local d'un catalogue de ROMs, parsing MD5/SHA-1 de fichiers .dat issus de No-Intro.",
         "Identification de ROMs inconnues par embeddings (pgvector) avec un pourcentage de confiance.",
         "Recherche hybride, suggestions et regroupement par collections assistés par IA, réponses JSON strictes.",
-        "Plus de 550 tests unitaires et documentation accessible en ligne."
+        "> 600 tests unitaires avec Swagger et manuel utilisateur en ligne. GitHub Actions avec linter (Oxlint), Prettier, husky."
       ]
     },
     {
@@ -157,10 +158,10 @@
       "skills": [
         "JavaScript / TypeScript",
         "Python avancé",
+        "Java",
         "PHP",
         "C",
         "C++",
-        "Java",
         "F#"
       ]
     },
@@ -171,7 +172,7 @@
         "GitHub Actions",
         "Docker",
         "Windows",
-        "Linux (Debian, Ubuntu)",
+        "Linux (Debian, Ubuntu, Mint)",
         "Swagger",
         "Nginx"
       ]
@@ -185,8 +186,8 @@
     },
     {
       "title": "TOEIC",
-      "issuer": "Passage prévu en janvier 2027",
-      "date": "01-2027"
+      "issuer": "Passage prévu en février 2027",
+      "date": "02-2027"
     }
   ],
   "languages": [
